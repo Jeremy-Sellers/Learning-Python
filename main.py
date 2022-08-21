@@ -1,3 +1,7 @@
+# Module import
+import helper
+import logging
+
 # # print function
 # print(20 * 24 * 60)
 #
@@ -97,25 +101,39 @@ def days_to_units(x):
 #         print('input is not valid')
 
 # Try/Except
-def validate_and_execute():
-    try:
-        user_input_as_num = int(num_of_days_element)
-        if user_input_as_num > 0:
-            calculated_value = days_to_units(user_input_as_num)
-            print(calculated_value)
-        elif user_input_as_num == 0:
-            print('Zero returns 0 seconds')
-        elif user_input_as_num < 0:
-            print('Invalid number, cannot get time from negative days')
-    except:
-        print('invalid input!')
+# def validate_and_execute():
+#     try:
+#         user_input_as_num = int(num_of_days_element)
+#         if user_input_as_num > 0:
+#             calculated_value = days_to_units(user_input_as_num)
+#             print(calculated_value)
+#         elif user_input_as_num == 0:
+#             print('Zero returns 0 seconds')
+#         elif user_input_as_num < 0:
+#             print('Invalid number, cannot get time from negative days')
+#     except:
+#         print('invalid input!')
 
 
-user_input = ''
-while user_input != 'exit':
-    user_input = input('choose a number of days to get seconds in those days!\n')
-    for num_of_days_element in user_input.split(','):
-        validate_and_execute()
+# user_input = ''
+# while user_input != 'exit':
+#     user_input = input('choose a number of days to get seconds in those days!\n')
+#     for num_of_days_element in set(user_input.split(',')):
+#         validate_and_execute()
+
+
+# while user_input != 'exit':
+#     user_input = input('choose a number of days to get and what unit of time to calculate seperated by a : \n')
+#     days_and_units = user_input.split(':')
+#     print(days_and_units)
+#     days_and_units_dictionary = {'days': days_and_units[0], 'unit': days_and_units[1]}
+#     print(days_and_units_dictionary)
+#     print(days_and_units_dictionary['days'] + ' days')
+
+# Import use Example
+# user_first_num = int(input('enter first number to multiply\n'))
+# user_second_num = int(input('enter second number to multiply\n'))
+# helper.multiply_two_nums(user_first_num,user_second_num)
 
 
 # print(type('string')) String
