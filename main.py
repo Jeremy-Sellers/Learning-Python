@@ -57,10 +57,10 @@ def days_to_units(user_input):
 
 # input Validation
 def divide_two_nums(x, y):
-    if y <= 0:
+    if y == 0:
         return "Cannot divide by zero"
     else:
-        print(x/y)
+        print(x / y)
         return f'{x / y}'
 
 
@@ -75,19 +75,50 @@ def days_to_units(x):
     else:
         return 'entered an invalid number'
 
-user_input = input('enter a number of days\n')
+
+# user_input = input('enter a number of days\n')
 
 
+# def validate_and_execute():
+#     if user_input.isdigit():
+#         user_input_as_num = int(user_input)
+#         calculated_value = days_to_units(user_input_as_num)
+#         print(calculated_value)
+#     else:
+#         print('input is not valid')
+
+# def validate_and_execute():
+#     if user_input.isdigit():
+#         user_input_as_num = int(user_input)
+#         if user_input_as_num > 0:
+#             calculated_value = days_to_units(user_input_as_num)
+#             print(calculated_value)
+#     else:
+#         print('input is not valid')
+
+# Try/Except
 def validate_and_execute():
-    if user_input.isdigit():
-        user_input_as_num = int(user_input)
-        calculated_value = days_to_units(user_input_as_num)
-        print(calculated_value)
-    else:
-        print('input is not valid')
+    try:
+        user_input_as_num = int(num_of_days_element)
+        if user_input_as_num > 0:
+            calculated_value = days_to_units(user_input_as_num)
+            print(calculated_value)
+        elif user_input_as_num == 0:
+            print('Zero returns 0 seconds')
+        elif user_input_as_num < 0:
+            print('Invalid number, cannot get time from negative days')
+    except:
+        print('invalid input!')
 
-validate_and_execute()
-# print(type('string'))
-# print(type(1))
-# print(type(1.0))
-# print(type(True))
+
+user_input = ''
+while user_input != 'exit':
+    user_input = input('choose a number of days to get seconds in those days!\n')
+    for num_of_days_element in user_input.split(','):
+        validate_and_execute()
+
+
+# print(type('string')) String
+# print(type(1)) Int
+# print(type(1.0)) Float
+# print(type(True)) Bool
