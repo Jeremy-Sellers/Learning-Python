@@ -1,6 +1,7 @@
 # Module import
 import helper
 import logging
+import django
 
 # # print function
 # print(20 * 24 * 60)
