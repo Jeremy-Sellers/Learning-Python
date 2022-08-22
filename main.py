@@ -2,6 +2,8 @@
 import helper
 import logging
 import django
+from user import User
+from post import Post
 
 # # print function
 # print(20 * 24 * 60)
@@ -12,6 +14,7 @@ import django
 # # String concatenation formatting
 # print(f'20 days are {20 * 24 * 60} minutes')
 #
+
 seconds_in_day = 24 * 60 * 60
 name_of_unit = 'seconds'
 
@@ -141,3 +144,14 @@ def days_to_units(x):
 # print(type(1)) Int
 # print(type(1.0)) Float
 # print(type(True)) Bool
+
+first_user = User('test@test.com', 'jeremy', 'Password1', 'developer')
+
+first_user.get_user_info()
+
+first_user.change_job_title('new job')
+
+first_user.get_user_info()
+
+new_post = Post('This has been a long but good course.\n', first_user.name)
+new_post.get_post_info()
